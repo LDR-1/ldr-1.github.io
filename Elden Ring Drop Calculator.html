@@ -1,0 +1,81 @@
+<html>
+<body>
+<style>
+body {
+background-color:rgb(134, 111, 33);
+}
+button {
+  background-color:rgb(247, 164, 40) ; 
+  border: dotted;
+  color:rgb(32, 32, 32) ;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  margin: 25px auto 25px auto;
+  display: block;
+  font-size: 16px;
+}
+button:hover{
+background-color: rgb(146, 89, 14);
+color: Black;
+cursor: Grab;
+}
+p{
+white-space: pre;
+text-align:center;
+}
+input{
+text-align:center;
+}
+h3{
+text-align:center;
+}
+label{
+text-align:center;
+}
+div{
+text-align:center;
+}
+</style>
+
+<h3>Put the Your Discovery stat here</h3>
+
+
+<div>
+<label  for="Discovery">Discovery:</label>
+<input type="number" id="Discovery" name="Discovery">
+</div>
+
+
+<h3>Put the desired items base drop chance here</h3>
+
+
+<div>
+<label for="Chance">Drop chance:</label>
+<input type="number" id="Chance" name="Chance">
+</div>
+
+	<script>
+	
+	function Calculate() 
+		{
+		var C = document.getElementById("Chance").value/100;
+		var A = document.getElementById("Discovery").value/100;
+
+		var Result = ((C*A)/(1 - C + (C*A))*100).toFixed(2);
+
+    alert("Your Chance of getting the Item is: " + Result +"%");
+		}
+		
+   
+	</script>
+
+
+<div>
+<button href="#" onclick = "Calculate()">
+Execute
+</button>
+</div>
+
+</body>
+</html>
